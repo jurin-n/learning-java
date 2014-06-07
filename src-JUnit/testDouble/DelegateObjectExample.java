@@ -3,14 +3,11 @@ package testDouble;
 import java.util.Date;
 
 public class DelegateObjectExample {
-	Date date = newDate();
+	Date date = new Date();
+	DateFactory dateFactory = new DateFactory();
 
-	Date newDate() {
-		return new Date();
-	}
-	
 	public void doSomething(){
-		this.date= newDate();
+		this.date= dateFactory.newDate();
 		int j=0;
 		System.out.println("無駄な処理始まり");
 		for(int i=0;i<100000;i++){
