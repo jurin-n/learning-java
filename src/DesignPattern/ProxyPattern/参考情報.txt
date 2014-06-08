@@ -1,0 +1,5 @@
+参考情報
+
+--Proxyパッターン
+http://en.wikipedia.org/wiki/Proxy_pattern
+http://www.techscore.com/tech/DesignPattern/Proxy.html/
