@@ -12,5 +12,4 @@ public class Hoge2 {
 	public String toString(){
 		return "Hoge [id=" + id + ",name="+ name +"]";
 	}
-
 }
