@@ -8,6 +8,7 @@ import java.util.Collection;
 import org.junit.Test;
 
 import src.Order;
+import src.Order2;
 import src.Person;
 import src.PersonImpl;
 
@@ -28,13 +29,13 @@ public class testJackson2 {
 
 	@Test
 	public void testJavaBeanがインターフェイスと実装に分離している場合() {
-		String jsonText="{\"name\":\"sunny\",\"orders\":[{\"order-id\":10000},{\"order-id\":20000}]}";
+		String jsonText="{\"name\":\"sunny\",\"age\":20,\"orders\":[{\"order-id\":10000},{\"order-id\":20000}]}";
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			Person person = mapper.readValue(jsonText, PersonImpl.class);
 			System.out.println(person.getName());
-			Collection<Order> orders = person.getOrders();
-			for(Order o:orders){
+			Collection<Order2> orders = person.getOrders();
+			for(Order2 o:orders){
 				System.out.println("o.getOrderId()=" + o.getOrderId());
 			}
 		} catch (IOException e) {

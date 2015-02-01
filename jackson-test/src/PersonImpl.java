@@ -2,10 +2,13 @@ package src;
 
 import java.util.Collection;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class PersonImpl implements Person {
 	private String name;
-	//@JsonTypeInfo(use=JsonTypeInfo.Id.NONE,defaultImpl=OrderImpl.class)
-	private Collection<Order> orders;
+	private Collection<Order2> orders;
 
 	public String getName() {
 		return name;
@@ -13,10 +16,14 @@ public class PersonImpl implements Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Collection<Order> getOrders() {
+
+	@JsonTypeInfo(use=JsonTypeInfo.Id.NONE,defaultImpl=OrderImpl.class)
+	public Collection<Order2> getOrders() {
 		return orders;
 	}
-	public void setOrders(Collection<Order> orders) {
+
+	@JsonTypeInfo(use=JsonTypeInfo.Id.NONE,defaultImpl=OrderImpl.class)
+	public void setOrders(Collection<Order2> orders) {
 		this.orders = orders;
 	}
 
